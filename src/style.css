@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body {
+    height: 100%;
+    width: 100%;
+}
 a,li,blockquote {
     text-decoration: none;
     list-style: none;
@@ -16,11 +19,12 @@ span {
     width: 100%;
     min-height: 10.5vh;
     background: white;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
+    z-index: 1;
 }
 .small-photo {
     width: 10%;
@@ -47,6 +51,7 @@ span {
 }
 .menu li {
     float: right;
+
 }
 .menu li a {
     color: black;
@@ -57,6 +62,25 @@ span {
     align-items: center;
     cursor: pointer;
     letter-spacing: 2px;
+    position: relative;
+}
+.menu li a::before {
+    background: none repeat scroll 0 0 transparent;
+
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    display: table;
+    width: 0;
+    content: "";
+    height: 4px;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+
+}
+.menu li a:hover::before {
+    width: 100%;
 }
 
 
@@ -77,11 +101,21 @@ align-items: center;
    width: 20%;
     height: 100vh;
     background: white;
+    transition: width 300ms ease-out;
+}
+.dropdown-menu:hover {
+    width: 35%;
+
 }
 .gallery-photo {
     width: 70%;
     height: 100vh;   
     background: black;
+    transition: width 300ms ease-out;
+
+}
+.gallery-photo:hover {
+    width: 100%;
 }
 .gallery-photo .gallery {
     min-height: 90%;
@@ -130,6 +164,13 @@ align-items: center;
 .next-prev-area .see-image img {
     width: 65%;
     height: inherit;
+    background: transparent;
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 10px;
+    
 }
 
 .menu-two {
@@ -149,6 +190,8 @@ align-items: center;
     align-items: center;
     cursor: pointer;
     letter-spacing: 2px;
+    font-size: 1rem;
+    font-variant: small-caps;
 }
 #social-icon {
     padding: 10px;
@@ -199,4 +242,28 @@ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     outline: none;
     color: bslack;
     cursor: pointer;
+}
+
+
+/*dropdown-menu*/
+
+.menu li:hover ul {
+    display: block;
+}
+.menu li ul {
+    background: white;
+    position: absolute;
+    justify-content: space-around;
+    display: none;
+    width: 250px;
+    min-height: 230px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 3px;
+}
+.menu li ul li {
+
+    width: 90%;
+    text-align: center;
+    margin: 10px;
+    transition: all 560ms ease-in;
 }
