@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-    height: 100%;
-    width: 100%;
-}
+
 a,li,blockquote {
     text-decoration: none;
     list-style: none;
@@ -14,6 +11,13 @@ a,li,blockquote {
 /*TOP - MENU */
 span {
     color: rgba(255, 169, 141, 1);
+    display: inline;
+    width: 85px;
+    margin-right: 30px;
+}
+span p {
+    display: inline-block;
+    padding: 10px;
 }
 .top-menu {
     width: 100%;
@@ -93,7 +97,8 @@ span {
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 80px;
-    position: absolute;
+    position: relative;
+
 }
 .dropdown-menu {
     display: flex;
@@ -114,7 +119,7 @@ align-items: center;
     transition: width 300ms ease-out;
 
 }
-.gallery-photo:hover {
+.gallery-photo:hover{
     width: 100%;
 }
 .gallery-photo .gallery {
@@ -266,4 +271,30 @@ border-radius: 3px;
     text-align: center;
     margin: 10px;
     transition: all 560ms ease-in;
+}
+
+.conf {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 10vh;
+    background: black;
+    text-align: center;
+    font-size: 2rem;  
+    color: white;
+    background: linear-gradient(180deg, rgba(240, 128, 128, 0.84) 0%, rgba(255, 255, 255, 0) 100%);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 10px;
+    transition: all 850ms ease-in;
+}
+.savedImageList {
+    min-height: 100vh;
+    width: 100%;
+
+    position: absolute ;
+}
+.addImage {
+    width: 130px;
+    height: 130px;
 }

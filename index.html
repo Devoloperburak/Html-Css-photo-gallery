@@ -6,8 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
     <title>My Photo Gallery</title>
-     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" type="text/css" href="node_modules/fullpage.js/dist/fullpage.css" />
+
+    <!-- This following line is optional. Only necessary if you use the option css3:false and you want to use other easing effects rather than "easeInOutCubic". -->
+    <script src="./node_modules/fullpage.js/vendors/easings.min.js"></script>
+    
+    
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="node_modules/fullpage.js/vendors/scrolloverflow.min.js"></script>
+    
+    <script type="text/javascript" src="node_modules/fullpage.js/dist/fullpage.js"></script>
+    </head>
 <body>
     
         <nav class="top-menu">
@@ -70,6 +79,7 @@
                         <span id="social-icon">
                         <img src="img/social-images/icons8-favorite-folder-30.png" alt="" srcset=""></span>
                             <a href="#">Likes</a>
+                        
                     </li>              
                  </ul>
             </div>
@@ -78,30 +88,31 @@
               
                 <div class="gallery">
                 <div class="imageOne">
-                    <img src="img/8fcf69b5eeb4a4f60b76f3036be8718b.jpg" alt="" srcset="">
+                    <img src="img/8fcf69b5eeb4a4f60b76f3036be8718b.jpg" alt="" srcset="" id="imageOne" ondblclick="saved(event)">
                 </div>
                 <div class="imageTwo">
-                    <img src="img/889aee30df2445be2b8c7af0b56b9fd1.jpg" alt="" srcset="">
+                    <img src="img/889aee30df2445be2b8c7af0b56b9fd1.jpg" alt="" srcset="" id="imageOne" ondblclick="saved(event)">
 
                 </div>
                 <div class="imageThree">
-                    <img src="img/fbe319734f51ad2c5c7b75702df75e5d.jpg" alt="" srcset="">
+                    <img src="img/fbe319734f51ad2c5c7b75702df75e5d.jpg" alt="" srcset="" id="imageOne" ondblclick="saved(event)">
                 </div>
                 <button type="button" class="change-button">CHANGE</button>
-            
+
             </div>
             
         </div>
             <div class="next-prev-area">
                 <div class="see-image">
-                    <img src="img/d50c2d26bf1ff81b36157765f822c986.jpg" alt="" srcset="">
+                    <img src="img/d50c2d26bf1ff81b36157765f822c986.jpg" alt="" srcset="" ondblclick="saved(event)">
                 </div>
+                <span>Likes : <p id="likestime">0</p></span>
             </div>
 
         </section>
-
-
-
+        <section class="savedImageList">
+            <h1> Kaydedilmiş Resimler</h1>
+        </section>
 
 
     <script src="src/app.js"></script>
